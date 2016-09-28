@@ -21,6 +21,12 @@ module Api
       end
     end
 
+    def destroy
+      @event = Event.find(params[:id])
+      @event.destroy
+      head :no_content
+    end
+
     private
 
       def event_params
