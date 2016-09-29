@@ -27,6 +27,15 @@ module Api
       head :no_content
     end
 
+    def update
+      @event = Event.find(params[:id])
+      if @event.update(event_params)
+        render json: @event
+      else
+        render nothing: true, status: unprocessable_entity
+      end
+    end 
+
     private
 
       def event_params
