@@ -10,10 +10,6 @@ var Event = React.createClass({
     return { edit: false };
   },
 
-  // setState: function(state) {
-  //   return {edit: state };
-  // },
-
   handleDelete: function(e) {
     e.preventDefault();
     $.ajax({
@@ -26,6 +22,15 @@ var Event = React.createClass({
         alert('Cannot delete requested record: ', error);
       }
     });
+  },
+
+  handleToggle: function(e) {
+    e.preventDefault();
+    this.setState({ edit: !this.state.edit });
+  },
+
+  recordValue: function(field) {
+    return ReactDOM.findDOMNode(this.refs[field]).value;
   },
 
   handleUpdate: function(e) {
@@ -53,12 +58,7 @@ var Event = React.createClass({
       alert('Please fill all fields.');
     }
   },
-
-  handleToggle: function(e) {
-    e.preventDefault();
-    this.setState({ edit: !this.state.edit });
-  },
-
+  
   validRecord: function() {
     if (this.recordValue("name") &&
         this.recordValue("place") &&
@@ -68,9 +68,6 @@ var Event = React.createClass({
     } else {
       return false;
     }
-  },
-  recordValue: function(field) {
-    return ReactDOM.findDOMNode(this.refs[field]).value;
   },
 
   render: function() {

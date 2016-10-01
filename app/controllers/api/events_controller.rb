@@ -1,6 +1,9 @@
 module Api
 
   class EventsController < ApplicationController
+
+    before_action :set_event, only: [:update, :destroy]
+    
     def index
       render json: Event.all
     end
@@ -22,13 +25,11 @@ module Api
     end
 
     def destroy
-      @event = Event.find(params[:id])
       @event.destroy
       head :no_content
     end
 
     def update
-      @event = Event.find(params[:id])
       if @event.update(event_params)
         render json: @event
       else
@@ -41,5 +42,9 @@ module Api
       def event_params
         params.require(:event).permit(:name, :description, :event_date, :place)
       end
+
+      def set_event
+        @event = Event.find(params[:id])
+      end  
   end
 end
