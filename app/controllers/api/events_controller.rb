@@ -5,7 +5,7 @@ module Api
     before_action :set_event, only: [:update, :destroy]
     
     def index
-      render json: Event.all
+      render json: Event.order(sort_by + ' ' + order)
     end
 
     def search
@@ -45,6 +45,17 @@ module Api
 
       def set_event
         @event = Event.find(params[:id])
-      end  
+      end
+
+      def sort_by
+        %w(name
+           place
+           description
+           event_date).include?(params[:sort_by]) ? params[:sort_by] : 'name' 
+      end 
+
+      def order
+        %w(asc desc).include?(params[:order]) ? params[:order] : 'asc'
+      end 
   end
 end
