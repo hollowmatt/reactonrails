@@ -16,6 +16,7 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "footer";
 
 .container {
   margin-top: -20px;
@@ -27,4 +28,9 @@
 
 .sortable {
   cursor: pointer;
+}
+
+.footer {
+  background: #50515a;
+  height: 100%;
 }
