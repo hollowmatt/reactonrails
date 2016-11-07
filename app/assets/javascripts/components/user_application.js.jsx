@@ -23,8 +23,8 @@ var UserApplication = React.createClass({
   render :function() {
     return(
       <div className="container">
-        <div className="jumbotron">
-          <h1>Create Account</h1>
+        <div className="megatron">
+          <h1>Accounts</h1>
         </div>
         <div className="row">
           <div className="col-md-12">

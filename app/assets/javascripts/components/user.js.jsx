@@ -23,7 +23,7 @@ var User = React.createClass({
     return(
       <tr>
         <td>{user.email}</td>
-        <td>{user.password_digest}</td>
+        <td>**********</td>
         <td>{user.created_at}</td>
         <td>{user.updated_at}</td>
       </tr>
