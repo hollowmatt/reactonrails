@@ -10,13 +10,19 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
  */
 
+//Import constants 
+@import "common/constants";
+
+//Import bootstrap
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+//Now import additional stylesheets
 @import "footer";
+@import "header";
 
 .container {
   margin-top: -20px;
@@ -30,7 +36,12 @@
   cursor: pointer;
 }
 
-.footer {
-  background: #50515a;
-  height: 100%;
+.megatron {
+  background-color: $megatron-background;
+  margin: 12px;
+  padding: 20px;
+  & h1 {
+    color: $megatron-font-color;
+    font-size: $h1-font-size;
+  }
 }

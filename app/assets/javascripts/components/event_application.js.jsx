@@ -66,7 +66,7 @@ var EventApplication = React.createClass({
   render: function() {
     return(
       <div className="container">
-        <div className="jumbotron">
+        <div className="megatron">
           <h1>React on Rails</h1>
           <p>par Mathieu</p>
         </div>

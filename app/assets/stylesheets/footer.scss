@@ -2,10 +2,9 @@ html, body {
   height: 100%
 }
 
-footer {
-  background: #50515a;
-  height: 250px;
-  margin: 30px;
+.footer {
+  background: $footer-background;
+  height: 100%;
   padding: 18px;
   margin-top: 18px;
 }
