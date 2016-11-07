@@ -29,7 +29,8 @@
 }
 
 .form-button-group {
-  margin-left: 2px;
+  margin-left: 1px;
+  margin-right: 1px;
 }
 
 .sortable {
@@ -43,5 +44,11 @@
   & h1 {
     color: $megatron-font-color;
     font-size: $h1-font-size;
+  }
+}
+
+.form-group {
+  & .form-control {
+    width: 95%;
   }
 }
