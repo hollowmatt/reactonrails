@@ -114,11 +114,11 @@ var Event = React.createClass({
           />
         </td>
         <td>
-          <a className="btn btn-success btn-sm form-button-group"
+          <a className="btn flat-butt-md flat-primary-butt btn-sm form-button-group"
              onClick={this.handleUpdate}>
             Save
           </a>
-          <a className="btn btn-default btn-sm form-button-group"
+          <a className="btn flat-butt-md flat-info-butt btn-sm form-button-group"
              onClick={this.handleToggle} >
             Cancel
           </a>
@@ -136,11 +136,11 @@ var Event = React.createClass({
         <td>{event.place}</td>
         <td>{event.description}</td>
         <td>
-          <a className="btn btn-danger btn-xs form-button-group"
+          <a className="btn flat-butt-sm flat-danger-butt btn-xs form-button-group"
              onClick={this.handleDelete} >
             Delete
           </a>
-          <a className="btn btn-primary btn-xs form-button-group"
+          <a className="btn flat-butt-sm flat-primary-butt btn-xs form-button-group"
              onClick={this.handleToggle} >
              Edit
           </a>

@@ -52,3 +52,75 @@
     width: 95%;
   }
 }
+
+.flat-butt {
+  display: inline-block;
+  margin: 0 5px;
+  border-radius: 0px;
+  font-family: "Lato", sans-serif;
+  font-size: 16.5px;
+  padding: 12px 20px;
+  border: 0;
+  background: #34495E;
+  color: #FFF;
+  cursor: pointer;
+  outline: 0;
+  & :hover {
+    background: #005580;
+  }
+}
+
+.flat-butt-md {
+  display: inline-block;
+  margin: 0 1px;
+  border-radius: 0px;
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  padding: 6px 8px;
+  border: 0;
+  background: #34495E;
+  color: #FFF;
+  cursor: pointer;
+  outline: 0;
+  & :hover {
+    background: #005580;
+  }
+}
+
+.flat-butt-sm {
+  display: inline-block;
+  margin: 0 3px;
+  border-radius: 0px;
+  font-family: "Lato", sans-serif;
+  font-size: 10px;
+  padding: 5px 8px;
+  border: 0;
+  background: #34495E;
+  color: #FFF;
+  cursor: pointer;
+  outline: 0;
+  & :hover {
+    background: #005580;
+  }
+}
+
+.flat-primary-butt {
+  background: #1abc9c;
+  & :hover {
+    background: #2fe2bf;
+  }
+}
+
+.flat-info-butt {
+  background: #3498db;
+  & :hover {
+    background: #5dade2;
+  }
+}
+
+.flat-danger-butt {
+  background: #e74c3c;
+  & :hover {
+    background: #ec7063;
+  }
+}
