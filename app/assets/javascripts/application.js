@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap-material-design-rails
 //= require react
 //= require react_ujs
 //= require components
