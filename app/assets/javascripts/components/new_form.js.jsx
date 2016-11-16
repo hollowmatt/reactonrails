@@ -49,8 +49,12 @@ var NewForm = React.createClass({
   render: function() {
     return(
       <form className="form-inline" onSubmit={this.handleAdd}>
-        <div className="form-group">
+        <div className="form-group label-floating is-empty">
+          <label className="control-label" 
+                 htmlFor="event_name">Name
+          </label>
           <input type="text"
+                 id="event_name"
                  className="form-control"
                  name="name"
                  placeholder="Name"

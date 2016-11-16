@@ -68,7 +68,7 @@ var EventApplication = React.createClass({
       <div className="container">
         <div className="megatron">
           <h1>React on Rails</h1>
-          <p>par Mathieu</p>
+          <p>par Mathieu <i className="material-icons">face</i></p>
         </div>
         <div className="row">
           <div className="col-md-4">
