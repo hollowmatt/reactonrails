@@ -13,12 +13,12 @@
  *= require_self
  */
 
+
+//Import material design
+@import "materialize";
+
 //Import constants 
 @import "common/constants";
-
-//Import bootstrap
-@import "bootstrap-sprockets";
-@import "bootstrap";
 
 //Now import additional stylesheets
 @import "footer";
