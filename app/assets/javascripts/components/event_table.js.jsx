@@ -1,17 +1,17 @@
-var EventTable = React.createClass({
-  handleDeleteRecord: function(event) {
+class EventTable extends React.Component {
+  handleDeleteRecord(event) {
     this.props.handleDeleteRecord(event);
-  },
+  }
 
-  handleUpdateRecord: function(old_event, event) {
+  handleUpdateRecord(old_event, event) {
     this.props.handleUpdateRecord(old_event, event);
-  },
+  }
 
-  handleSortColumn: function(name, order) {
+  handleSortColumn(name, order) {
     this.props.handleSortColumn(name, order);
-  },
+  }
 
-  render: function() {
+  render() {
     var events = [];
     this.props.events.forEach(function(event) {
       events.push(<Event event={event}
@@ -60,4 +60,4 @@ var EventTable = React.createClass({
       </table>
     )
   }
-});
+}
