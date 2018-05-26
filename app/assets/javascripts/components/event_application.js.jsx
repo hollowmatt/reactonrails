@@ -1,15 +1,15 @@
-var EventApplication = React.createClass({
-  getInitialState: function() {
+class EventApplication extends React.Component {
+  getInitialState() {
     return { events: [],
              sort: "name",
              order: "asc" };
-  },
+  }
 
-  componentDidMount: function() {
+  componentDidMount() {
     this.getDataFromApi();
-  },
+  }
 
-  getDataFromApi: function() {
+  getDataFromApi() {
     var self = this;
     $.ajax({
       url: '/api/events',
@@ -20,33 +20,33 @@ var EventApplication = React.createClass({
         alert('Cannot get data from API: ', error);
       }
     });
-  },
+  }
 
-  handleSearch: function(events) {
+  handleSearch(events) {
     this.setState({ events: events });
-  },
+  }
 
-  handleAdd: function(event) {
+  handleAdd(event) {
     var events = this.state.events;
     events.push(event);
     this.setState({events: events});
-  },
+  }
 
-  handleDeleteRecord: function(event) {
+  handleDeleteRecord(event) {
     var events = this.state.events.slice();
     var index = events.indexOf(event);
     events.splice(index, 1);
     this.setState({ events: events });
-  },
+  }
 
-  handleUpdateRecord: function(old_event, event) {
+  handleUpdateRecord(old_event, event) {
     var events = this.state.events.slice();
     var index = events.indexOf(old_event);
     events.splice(index, 1, event);
     this.setState({ events: events });
-  },
+  }
 
-  handleSortColumn: function(name, order) {
+  handleSortColumn(name, order) {
     if (this.state.sort != name) {
       order = 'asc';
     }
@@ -61,9 +61,9 @@ var EventApplication = React.createClass({
         alert('Cannot sort events: ', error);
       }
     });
-  },
+  }
 
-  render: function() {
+  render() {
     return(
       <div className="container">
         <div className="megatron">
@@ -91,4 +91,4 @@ var EventApplication = React.createClass({
       </div>
     )
   }
-});
+}
