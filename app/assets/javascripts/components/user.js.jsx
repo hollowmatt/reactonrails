@@ -1,24 +1,27 @@
-var User = React.createClass({
-  propTypes: {
-    email: React.PropTypes.string,
-    password_digest: React.PropTypes.string, 
-    created_at: React.PropTypes.string,
-    updated_at: React.PropTypes.string
-  },
+class User extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: "",
+      password_digest: "", 
+      created_at: "",
+      updated_at: ""
+    };  
+  }
 
-  getInitialState: function() {
+  getInitialState() {
     return { users: [] }
-  },
+  }
 
-  recordValue: function(field) {
+  recordValue(field) {
     return ReactDOM.findDOMNode(this.refs[field]).value;
-  },
+  }
 
-  render: function() {
+  render() {
     return(this.renderRecord());
-  },
+  }
 
-  renderRecord: function() {
+  renderRecord() {
     var user = this.props.user;
     return(
       <tr>
@@ -30,4 +33,4 @@ var User = React.createClass({
     );
   }
 
-});
+}

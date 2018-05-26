@@ -1,6 +1,6 @@
-var UserTable = React.createClass({
+class UserTable extends React.Component {
   
-  render: function() {
+  render() {
     var users = [];
     this.props.users.forEach(function(user) {
       users.push(<User user={user} key={'user' +user.id}/>);
@@ -29,4 +29,4 @@ var UserTable = React.createClass({
       </table>
     )
   }
-});
+}

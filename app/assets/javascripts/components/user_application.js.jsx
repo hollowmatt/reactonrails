@@ -1,13 +1,13 @@
-var UserApplication = React.createClass({
-  getInitialState: function() {
+class UserApplication extends React.Component {
+  getInitialState() {
     return { users: []};
-  },
+  }
 
-  componentDidMount: function() {
+  componentDidMount() {
     this.getDataFromApi();
-  },
+  }
 
-  getDataFromApi: function() {
+  getDataFromApi() {
     var self = this;
     $.ajax({
       url: '/api/users',
@@ -18,9 +18,9 @@ var UserApplication = React.createClass({
         alert('Cannot get data from API: ', error);
       }
     });
-  },
+  }
   
-  render :function() {
+  render () {
     return(
       <div className="container">
         <div className="megatron">
@@ -34,4 +34,4 @@ var UserApplication = React.createClass({
       </div>
     )
   }
-});
+}
