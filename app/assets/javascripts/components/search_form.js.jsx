@@ -1,5 +1,5 @@
-var SearchForm = React.createClass({
-  handleSearch: function() {
+class SearchForm extends React.Component {
+  handleSearch() {
     var query = ReactDOM.findDOMNode(this.refs.query).value;
     var self = this;
 
@@ -13,8 +13,9 @@ var SearchForm = React.createClass({
         alert('Search error: ', status, xhr, error);
       }
     });
-  },
-  render: function() {
+  }
+
+  render() {
     return(
       <input onChange={this.handleSearch}
              type="text"
@@ -23,4 +24,4 @@ var SearchForm = React.createClass({
              ref="query" />
     )
   }
-});
+}
