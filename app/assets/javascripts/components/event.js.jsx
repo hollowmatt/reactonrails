@@ -1,16 +1,19 @@
-var Event = React.createClass({
-  propTypes: {
-    name: React.PropTypes.string,
-    event_date: React.PropTypes.string,
-    place: React.PropTypes.string,
-    description: React.PropTypes.string
-  },
+class Event extends React.Component {
+  constructor(props) {
+    super(proprs);
+    this.state = {
+      name: "",
+      event_date: "",
+      place: "",
+      description: ""
+    };
+  }
 
-  getInitialState: function() {
+  getInitialState() {
     return { edit: false };
-  },
+  }
 
-  handleDelete: function(e) {
+  handleDelete(e) {
     e.preventDefault();
     $.ajax({
       method: 'DELETE',
@@ -22,18 +25,18 @@ var Event = React.createClass({
         alert('Cannot delete requested record: ', error);
       }
     });
-  },
+  }
 
-  handleToggle: function(e) {
+  handleToggle(e) {
     e.preventDefault();
     this.setState({ edit: !this.state.edit });
-  },
+  }
 
-  recordValue: function(field) {
+  recordValue(field) {
     return ReactDOM.findDOMNode(this.refs[field]).value;
-  },
+  }
 
-  handleUpdate: function(e) {
+  handleUpdate(e) {
     e.preventDefault();
     if (this.validRecord()) {
       var event_data = {
@@ -57,9 +60,9 @@ var Event = React.createClass({
     } else {
       alert('Please fill all fields.');
     }
-  },
+  }
   
-  validRecord: function() {
+  validRecord() {
     if (this.recordValue("name") &&
         this.recordValue("place") &&
         this.recordValue("date") &&
@@ -68,17 +71,17 @@ var Event = React.createClass({
     } else {
       return false;
     }
-  },
+  }
 
-  render: function() {
+  render() {
     if (this.state.edit) {
       return(this.renderForm());
     } else {
       return(this.renderRecord());
     }
-  },
+  }
 
-  renderForm: function() {
+  renderForm() {
     return(
       <tr>
         <td>
@@ -125,9 +128,9 @@ var Event = React.createClass({
         </td>
       </tr>
     );
-  },
+  }
 
-  renderRecord: function() {
+  renderRecord() {
     var event = this.props.event;
     return(
       <tr>
@@ -149,4 +152,4 @@ var Event = React.createClass({
     );
   }
 
-});
+}
