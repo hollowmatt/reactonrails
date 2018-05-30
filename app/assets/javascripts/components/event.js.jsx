@@ -1,6 +1,6 @@
 class Event extends React.Component {
   constructor(props) {
-    super(proprs);
+    super(props);
     this.state = {
       name: "",
       event_date: "",

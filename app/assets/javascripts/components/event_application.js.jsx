@@ -1,6 +1,7 @@
 class EventApplication extends React.Component {
-  getInitialState() {
-    return { events: [],
+  constructor(props) {
+    super(props);
+    this.state = { events: [],
              sort: "name",
              order: "asc" };
   }
